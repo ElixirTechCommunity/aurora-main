@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>Aurora - Hack The Spectrum</title>
-    <link rel="icon" type="image/png" sizes="64x64" href="./asset/stellar/images/logo.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="./images/aurora/greengrad.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="asset/stellar/./css/vendors/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="asset/stellar/./css/vendors/swiper-bundle.min.css">
@@ -41,14 +41,14 @@
         <div class="cs2x1 cq32i c8rkc co970">
             <!-- Site header -->
             <header class="cl2cn c5r67 cytoa header">
-                <div class="cknuf chyag ck7tl cj5a0">
-                    <div class="cs2x1 cr9dw cxwsr clfke c05f2">
+                <div class="cknuf chyag ck7tl cj5a0 navbar-container">
+                    <div class="cs2x1 cr9dw cxwsr clfke c05f2 nav-elements">
 
                         <!-- Site branding -->
                         <div class="cgtgw cw4n2">
                             <!-- Logo -->
                             <a class="c5puz" href="#about" aria-label="Cruip">
-                                <img src="./asset/stellar/images/logo.png" width="70" height="70" alt="logo">
+                                <img src="./images/aurora/aurora-white.png" width="200" height="90" alt="logo">
                             </a>
                         </div>
 
@@ -105,6 +105,15 @@
                     </div>
                 </div>
                 <style>
+                    .navbar-container{
+                            background: rgba(33, 98, 107, 0.384);
+                            margin:0px;
+                            max-width: 100%;
+                    }
+                    
+                    .nav-elements{
+                        margin:0px;
+                    }
                     .hamburger {
                         display: none;
                         cursor: pointer;
@@ -119,11 +128,20 @@
                         transition: all 0.3s ease-in-out;
                         background-color: #cbd5e1;
                     }
+                    .header{
+                        position: fixed;
+                        top: 0px;
+                        width: 100%;
+                        backdrop-filter: blur(50px);
+                     }
 
                     @media(max-width:828px) {
+                        .navbar-container{
+                            background: rgba(33, 98, 107, 0.527);
+                        }
                         .hamburger {
                             display: block;
-                            margin-left: 90%;
+                            margin-left: 80%;
                         }
 
                         .hamburger.active .bar:nth-child(2) {
@@ -173,6 +191,12 @@
 
                         .header {
                             position: fixed;
+                            height: 100%;
+                            backdrop-filter: blur(0px);
+                        }
+
+                        .header.active{
+                            backdrop-filter: blur(50px);
                         }
 
                     }
@@ -180,16 +204,19 @@
                 <script>
                     const hamburger = document.querySelector(".hamburger");
                     const navMenu = document.querySelector(".nav-menu");
+                    const header = document.querySelector(".header");
 
                     hamburger.addEventListener("click", () => {
                         hamburger.classList.toggle("active");
                         navMenu.classList.toggle("active");
+                        header.classList.toggle("active");
 
                     })
 
                     document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
                         hamburger.classList.remove("active")
                         navMenu.classList.remove("active")
+                        header.classList.toggle("active");
                     }))
                 </script>
             </header>
@@ -238,10 +265,12 @@
                                 <div class="cknuf chnsh csz2t c0bgf c2mz6 c7xko cpdb4 c5cwt" data-aos="fade-down"
                                     data-aos-delay="400">
                                     <div>
-                                        <a class="cmae3 cytoa cmmug c53mx ccarb cvpag culnm cco4s cykc9 c2rol cnen9 cxxlx"
+                                        <a class="cmae3 cytoa cmmug c53mx ccarb cvpag culnm cco4s cykc9 c2rol cnen9 cxxlx devfolio"
                                             href="#" target="_blank">
-                                            Applications will be open soon <span
-                                                class="ctkza ctfx3 ct2xv cot2b cykc9 c2rol c8087">-&gt;</span>
+                                            <img src="./images/DevfolioDark.png" width="85"></a>
+                                        <!-- <span>
+                                            Devfolio <span
+                                                class="ctkza ctfx3 ct2xv cot2b cykc9 c2rol c8087">-&gt;</span> -->
                                         </a>
                                     </div>
                                     <div>
@@ -249,7 +278,7 @@
                                             href="https://discord.com/invite/YN9ZGjXdXK" target="_blank">
                                             
                                             <span><i class="fa-brands fa-github" style="color: #ffffff;"></i> Discord</span>
-                                        </a>
+                                        </a>        
                                     </div>
                                 </div>
 
@@ -258,6 +287,13 @@
                         </div>
                     </div>
                 </section>
+
+                <style>
+                    .devfolio{
+                        font-weight: bold;
+                    }
+
+                </style>
 
                 <!-- Clients -->
                 <section id="collabs">
@@ -272,6 +308,31 @@
 
                         <div class="ctvyg cy0uw">
                             <div class="co970">
+                                
+                                <div class="wrapper">
+                                    <p>Registration will open soon!!..</p>
+                                </div>
+                                <style>
+                                    .wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 25px;
+  width: 100%;
+}
+
+.wrapper p {
+  position: absolute;
+  margin: 0;
+  line-height: 25px;
+  white-space: nowrap;
+  animation: marquee 7s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+                                </style>
                                 <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
                                 <!-- * Initialized in src/js/main.js -->
                                 <!-- * Custom styles in src/css/additional-styles/theme.scss -->
@@ -1147,25 +1208,181 @@
 
                             
                                 <!-------------------------------------------TIMELINE----------------------------------------------------->
-                                <img src="./asset/stellar/images/TBA1.png" alt="timeline" class="tba-image">
-                                <img src="./asset/stellar/images/TBA2.png" alt="timeline" class="tba2-image">
+                                <!-- <img src="./asset/stellar/images/TBA1.png" alt="timeline" class="tba-image"> -->
+                                <!-- <img src="./asset/stellar/images/TBA2.png" alt="timeline" class="tba2-image"> -->
+                               
+                                 <div class="line_box stav_projektu" style="margin: 40px 0 40px 0;">
+                                    <div class="text_circle done">
+                                       <div class="circle">
+                                          <h4>Registration</h4>
+                                          <p>27-09-2024</p>
+                                       </div>
+                                       <a href="javascript:void(0)" class="tvar"><span data-toggle="popover" title="Sample text" data-trigger="hover" data-placement="top" data-content="Ukázkový text při hover"></span></a>
+                                    </div>
+                                    <div class="text_circle"> <!--use sub for half line-->
+                                       <div class="circle">
+                                          <h4>Zahájení výstavby</h4>
+                                          <p>Říjen 2019</p>
+                                          <!-- <div class="subline">
+                                             <h6>Říjen</h6>
+                                             <p>2019</p>
+                                          </div> -->
+                                       </div>
+                                       <a href="javascript:void(0)" class="tvar"><span data-toggle="popover" title="Sample text" data-trigger="hover" data-placement="top" data-content="Ukázkový text při hover"></span></a>
+                                    </div>
+                                    <div class="text_circle">
+                                       <div class="circle">
+                                          <h4>Dokončení hrubé stavby</h4>
+                                          <p>Listopad 2020</p>
+                                       </div>
+                                       <a href="javascript:void(0)" class="tvar"></a>
+                                    </div>
+                                    <div class="text_circle">
+                                       <div class="circle">
+                                          <h4>Kolaudace</h4>
+                                          <p>Červen 2021</p>
+                                       </div>
+                                       <a href="javascript:void(0)" class="tvar"></a>
+                                    </div>
+                                    <div class="text_circle">
+                                       <div class="circle">
+                                          <h4>K nastěhování</h4>
+                                          <p>Srpen 2021</p>
+                                       </div>
+                                       <a href="javascript:void(0)" class="tvar"></a>
+                                    </div>
+                                 </div>
                                 <style>
-                                    .tba-image{
+                                    .line_box {
+     display: flex;
+     margin-bottom: 40px;
+}
+ .text_circle {
+     flex: 1;
+     text-align: center;
+     position: relative;
+}
+ .text_circle:after {
+     background-color: rgb(33, 98, 107);
+     bottom: 1.25em;
+     content: "";
+     display: block;
+     height: 3px;
+     position: absolute;
+     right: 0;
+     width: 50%;
+     z-index: -1;
+}
+ .stav_projektu .text_circle:after,.stav_projektu .tex  t_circle:before {background-color: white;}
+ .line_box h4 {
+     color: rgb(33, 98, 107);
+     font-weight: bold;
+}
+ .line_box h4,.line_box p {
+     font-size: 12px;
+     margin-bottom: 0;
+     padding: 0 5px;
+}
+ .subline {
+     position: absolute;
+     right: -25px;
+     bottom: -43%;
+}
+ .subline:before {
+     content: "";
+     position: absolute;
+     height: 15px;
+     width: 15px;
+     bottom: 14px;
+     right: 15px;
+     background-color: rgb(33, 98, 107);
+     border-radius: 50%;
+     top: -25px;
+}
+ .subline h6 {margin-bottom: 0;}
+ .timeline {margin: 40px 0;}
+ .text_circle.done:after,.text_circle.done + .text_circle:before,.stav_projektu .text_circle.done:after,.stav_projektu .text_circle.done + .text_circle:before {background-color: rgb(33, 98, 107);}
+ .text_circle.sub:after {background-color: rgb(33, 98, 107);}
+ .text_circle:not(:first-child):before {
+     bottom: 1.25em;
+     content: "";
+     display: block;
+     height: 3px;
+     position: absolute;
+     left: 0;
+     width: 50%;
+     z-index: -1;
+     background-color: white;
+}
+ .stav_projektu .text_circle:not(:first-child):before {background-color: white;}
+ .text_circle:last-child:after {width: 0;}
+ .circle {height: 100%;}
+ .tvar {
+     height: 40px;
+     width: 40px;
+     border: 2px solid white;
+     display: flex;
+     position: relative;
+     border-radius: 100%;
+     top: -43px;
+     margin: 3px auto;
+     background-color: rgb(33, 98, 107);;
+    }
+ /* .tvar span {
+     margin: 25% auto; 
+     height: 100%;
+     width: 100%;
+     background-color: rgb(33, 98, 107);
+     border-radius: 100%;
+     color: #fff;
+} */
+ .stav_projektu .tvar {border: 2px solid white;}
+ .stav_projektu .done .tvar,.stav_projektu .sub .tvar {border: 2px solid rgb(33, 98, 107);}
+ .subline h6 {color: rgb(33, 98, 107);}
+ .timeline .card-header:hover {
+     background-color: #ececec;
+     cursor: pointer;
+}
+/* iPhone X ----------------------------------- */
+ @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+    .subline:before {top: -43px;}
+}
+ @media only screen and (device-width : 812px) and (device-height : 375px) and (orientation : landscape) and (-webkit-device-pixel-ratio : 3) {
+    .subline:before {top: -31px;}
+}
+/* iPad portrait ----------------------------------- */
+ @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .subline:before {top: -29px;}
+}
+/* mobile width till 767px ----------------------------------- */
+ @media (max-width: 767px){
+    .subline:before {top: -30px;}
+}
+/* Portrait iPad Pro */
+ @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .subline:before {top: -23px;}
+}
+/* mobile width till 480px ----------------------------------- */
+ @media (max-width: 480px){
+    .subline:before {top: -43px;}
+}
+
+                                    /* .tba-image{
                                         border: 1px solid rgba(87, 71, 71, 0.558);
                                         border-radius: 22px;
-                                    }
-                                    .tba2-image{
+                                    } */
+                                    /* .tba2-image{
                                         display: none;
-                                    }
+                                    } */
                                     @media only screen and (max-width: 600px){
-                                        .tba-image{
+                                        /* .tba-image{
                                             display: none;
                                         }
                                         .tba2-image{
                                             display: block;
                                             border-radius: 22px;
                                             border: 1px solid rgba(87, 71, 71, 0.558);
-                                        }
+                                        } */
                                     }
                                 </style>
                                 <!-- Box #2 -->
@@ -1491,10 +1708,10 @@
                                     <!-- <div>
                                     <div class="cwkz6 cmmug cpb1t c6mtw cicf4 camr2 ciph8 cjeaj"></div>
                                 </div> -->
-                                    <div class="cjvyj cq0og cld7d c5rb1 clfvo">
+                                    <div class="cjvyj cq0og cld7d c5rb1 clfvo question-container">
                                         <!-- Feature -->
                                         <div>
-                                            <div class="ceq85 cs2x1 cxwsr cmru4">
+                                            <div class="ceq85 cs2x1 cxwsr cmru4 ">
                                                 <svg class="cw4n2 c03dg" xmlns="http://www.w3.org/2000/svg" width="16"
                                                     height="16">
                                                     <path
@@ -1539,12 +1756,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <!-- Row -->
                                 <div class="cpb5v">
                                     <!-- <div>
                                     <div class="cwkz6 cmmug cpb1t c6mtw cicf4 camr2 ciph8 cjeaj"></div>
                                 </div> -->
-                                    <div class="cjvyj cq0og cld7d c5rb1 clfvo">
+                                    <div class="cjvyj cq0og cld7d c5rb1 clfvo question-container">
                                         <!-- Feature -->
                                         <div>
                                             <div class="ceq85 cs2x1 cxwsr cmru4">
@@ -1598,7 +1816,7 @@
                                     <!-- <div>
                                     <div class="cwkz6 cmmug cpb1t c6mtw cicf4 camr2 ciph8 cjeaj">Standard Security</div>
                                 </div> -->
-                                    <div class="cjvyj cq0og cld7d c5rb1 clfvo">
+                                    <div class="cjvyj cq0og cld7d c5rb1 clfvo question-container">
                                         <!-- Feature -->
                                         <div>
                                             <div class="ceq85 cs2x1 cxwsr cmru4">
@@ -1652,6 +1870,21 @@
                         </div>
                     </div>
                 </section>
+
+                <style>
+                    .question-container{
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0px 2rem
+                    }
+                    @media(max-width:828px) {
+                        .question-container{
+                        
+                        margin: 0px 0px
+                    }   
+                    }
+
+                </style>
 
                 <!-- Pricing -->
                 <!-- <section class="ca60c"> -->
