@@ -1255,6 +1255,10 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .c8p73 {
   margin-bottom: 0.75rem;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 .cznm6 {
@@ -2086,7 +2090,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .ce3al {
-  text-align: right;
 }
 
 .curfr {
