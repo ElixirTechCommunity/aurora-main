@@ -3484,3 +3484,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .prize-content {
   font-size: 2rem;
 }
+
+.bounty-grid {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.bounty-content {
+  font-size: 1.5rem;
+}
