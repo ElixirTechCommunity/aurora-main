@@ -3476,3 +3476,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .c2f0r > div {
   background-color: rgb(51 65 85/0.2);
 }
+
+.prize-heading {
+  font-size: 1.5rem;
+}
+
+.prize-content {
+  font-size: 2rem;
+}
